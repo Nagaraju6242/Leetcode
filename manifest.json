@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "LeetCode Solution Accepted Sound Player",
+    "version": "1.0",
+    "description": "Play sound when your Leetcode solution is accepted",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "icons/accept_16.png",
+        "32": "icons/accept_32.png",
+        "128": "icons/accept_128.png"
+    },
+    "permissions": [
+        "tabs",
+        "cookies"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://leetcode.com/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "script.js"
+            ],
+            "matches": [
+                "https://leetcode.com/*"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "https://leetcode.com/*"
+    ]
+}
