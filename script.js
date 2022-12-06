@@ -1,7 +1,12 @@
 DEFAULT_PLAY_URL = "https://mobcup.net/va/VVpPe4hO6fT8s25NN";
 
 function playSound() {
-    audioPlayer.play();
+    playSoundURL = getCookie("playSoundURL");
+
+    if (playSoundAudio.src != playSoundURL) {
+        playSoundAudio.src = playSoundURL
+    }
+    playSoundAudio.play();
 }
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -26,12 +31,8 @@ window.fetch = (...args) => (async (args) => {
     return result;
 })(args);
 
-audioPlayer = document.createElement("audio");
-audioPlayer.style.display = "none";
-audioPlayer.id = "audioPlayer";
 playSoundURL = getCookie("playSoundURL");
 if (playSoundURL == null) {
     playSoundURL = DEFAULT_PLAY_URL;
 }
-audioPlayer.src = playSoundURL;
-document.body.appendChild(audioPlayer);
+playSoundAudio = new Audio(playSoundURL);

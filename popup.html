@@ -5,14 +5,59 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <title>Leetcode Sound</title>
+  <style>
+    body {
+      padding: 10px;
+      font-family: 'Roboto', sans-serif;
+
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    p span {
+      color: green;
+    }
+
+    input {
+      padding: 5px 10px;
+      font-family: inherit;
+    }
+
+    button {
+      padding: 5px 10px;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      background-color: #28a745;
+      margin: 20px auto;
+      display: inline-block;
+    }
+
+    small {
+      display: block;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #28a745;
+    }
+  </style>
 </head>
 
 <body>
-  <p>Play a sound when your solution gets Accepted in Leetcode</p>
+  <p>Play a sound when your solution gets <span>Accepted</span> in Leetcode</p>
   <input type="url" id="url" name="url" placeholder="Url of the sound file">
   <button>Save</button>
-  <small>Upload the file on any drive and provide a direct url for the file</small>
+  <small>Leave it blank for default audio</small>
 
   <div class="result"></div>
 
